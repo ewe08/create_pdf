@@ -40,7 +40,7 @@ class PDF(FPDF):
         self.ln(10)
 
         d = [["Представитель Научно-издательской платформы «Из уст»", "\n\n____________________________/Зарипов Ш.Р."]]
-        with pdf.table(width=150, headings_style=headings_style) as table:
+        with pdf.table(width=150, headings_style=headings_style, borders_layout="SINGLE_TOP_LINE") as table:
             for data_row in d:
                 row = table.row()
                 for datum in data_row:
