@@ -40,11 +40,16 @@ class PDF(FPDF):
         self.ln(10)
 
         d = [["Представитель Научно-издательской платформы «Из уст»", "\n\n____________________________/Зарипов Ш.Р."]]
+        second = False
         with pdf.table(width=150, headings_style=headings_style, borders_layout="SINGLE_TOP_LINE") as table:
             for data_row in d:
                 row = table.row()
                 for datum in data_row:
                     row.cell(datum, align="l")
+        self.image("sign.jpg", w=30, h=15, x=110, y=189)
+        self.cell(90)
+
+        self.image("stamp.jpg", w=40, h=40)
         self.ln(10)
 
 
